@@ -585,7 +585,7 @@ h2:first-of-type {
   }
   #problemsList {
     margin: 0 15px;
-    display: none;
+    /* display: none; */
   }
 }
 
@@ -620,7 +620,7 @@ h2:first-of-type {
   }
 
   #problemsList {
-    display: none;
+    /*  display: none; */
     margin: 0 3em;
   }
   #toggleSidebarButton {

@@ -14,24 +14,28 @@ let problemas = [];
 let modeloSeleccionado = null;
 
 fetch('problemas.json')
-  .then(response => response.json())
-  .then(data => {
+  .then((response) => response.json())
+  .then((data) => {
     problemas = data;
     actualizarModeloSeleccionado();
     filtrarYMostrarProblemas();
   })
-  .catch(error => console.error('Error al cargar el archivo JSON:', error));
+  .catch((error) => console.error('Error al cargar el archivo JSON:', error));
 
 function actualizarModeloSeleccionado() {
   const urlParams = new URLSearchParams(window.location.search);
   modeloSeleccionado = urlParams.get('modelo');
 }
 
-modeloBotones.forEach(boton => {
+modeloBotones.forEach((boton) => {
   boton.addEventListener('click', () => {
-    modeloSeleccionado = modeloSeleccionado === boton.value ? null : boton.value;
-    modeloBotones.forEach(btn => {
-      btn.classList.toggle('selected', btn === boton && modeloSeleccionado !== null);
+    modeloSeleccionado =
+      modeloSeleccionado === boton.value ? null : boton.value;
+    modeloBotones.forEach((btn) => {
+      btn.classList.toggle(
+        'selected',
+        btn === boton && modeloSeleccionado !== null
+      );
     });
     actualizarURL(modeloSeleccionado); // Actualiza la URL con la categoría seleccionada
     filtrarYMostrarProblemas();
@@ -45,12 +49,12 @@ function filtrarYMostrarProblemas() {
   let problemasFiltrados = problemas;
 
   if (modeloSeleccionado) {
-    problemasFiltrados = problemasFiltrados.filter(problema =>
-      problema.modelo === modeloSeleccionado
+    problemasFiltrados = problemasFiltrados.filter(
+      (problema) => problema.modelo === modeloSeleccionado
     );
   }
 
-  problemasFiltrados = problemasFiltrados.filter(problema =>
+  problemasFiltrados = problemasFiltrados.filter((problema) =>
     problema.problema.toLowerCase().includes(filtroTexto)
   );
 
@@ -63,7 +67,7 @@ const modeloParametro = urlParams.get('modelo');
 // Busca el botón que coincida con 'modeloParametro' y actívalo
 if (modeloParametro) {
   const botonSeleccionado = Array.from(modeloBotones).find(
-    boton => boton.getAttribute('value') === modeloParametro
+    (boton) => boton.getAttribute('value') === modeloParametro
   );
   if (botonSeleccionado) {
     botonSeleccionado.click(); // Simula un clic en el botón encontrado
@@ -97,7 +101,7 @@ function mostrarProblemas(lista, filtroTexto) {
     problemsList.appendChild(modeloTitulo);
 
     const problemasDeModelo = problemasPorModelo[modelo];
-    problemasDeModelo.forEach(problema => {
+    problemasDeModelo.forEach((problema) => {
       const item = document.createElement('li');
       item.classList.add('li-problema-solucion');
       const problemaDiv = document.createElement('div');
@@ -111,7 +115,7 @@ function mostrarProblemas(lista, filtroTexto) {
 
       const problemaConResaltado = problema.problema.replace(
         new RegExp(filtroTexto, 'gi'),
-        match => `<span class="resaltado">${match}</span>`
+        (match) => `<span class="resaltado">${match}</span>`
       );
 
       problemaParrafo.innerHTML = `<strong class="problemaTitulo">Problema:</strong> ${problemaConResaltado}`;
