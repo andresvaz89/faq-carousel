@@ -1,10 +1,10 @@
 /* Estilos generales */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   background-color: #050505;
   background-image: linear-gradient(rgba(0, 98, 104, 0.4), rgba(0, 0, 0, 0.6));
 }
@@ -65,7 +65,7 @@ header {
 }
 
 /*  main */
-input[type="search"] {
+input[type='search'] {
   box-sizing: border-box;
   width: 10%;
   padding: 10px;
@@ -79,7 +79,7 @@ input[type="search"] {
   );
 }
 
-input[type="search"]:focus {
+input[type='search']:focus {
   width: 12%;
   box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
   transition: all 0.2s ease;
@@ -101,7 +101,6 @@ input[type="search"]:focus {
   margin-left: 10em;
 }
 
-
 .mid {
   max-width: 55%;
   min-width: 50%;
@@ -110,7 +109,7 @@ input[type="search"]:focus {
   margin-left: 6em;
 }
 
-.right{
+.right {
   margin-right: 10em;
   min-width: 10%;
   display: flex;
@@ -178,7 +177,7 @@ input[type="search"]:focus {
 
 .sidebar ul li:after {
   position: absolute;
-  content: "";
+  content: '';
   top: 0;
   left: 0;
   width: 0;
@@ -206,7 +205,6 @@ a:active {
   border-bottom: none;
 }
 
-
 /* Header */
 
 h1 {
@@ -217,7 +215,7 @@ h1 {
   margin: 5px;
 }
 h1::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 200;
   bottom: 0;
@@ -225,7 +223,6 @@ h1::before {
   height: 3px;
   background-color: #f8c76c;
 }
-
 
 ul {
   list-style: none;
@@ -285,7 +282,7 @@ li.problemaItem {
   margin-top: 5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-  background-image: url("../img/svgs/flecha-hacia-abajo.svg");
+  background-image: url('../img/svgs/flecha-hacia-abajo.svg');
   background-size: cover;
   width: 20px;
   height: 20px;
@@ -361,7 +358,7 @@ h2 {
   color: #fefcfb;
   margin-bottom: 0px;
   margin-top: 10px;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
@@ -391,13 +388,12 @@ h2:first-of-type {
   display: none;
 }
 
-#toggleSidebarButton{
+#toggleSidebarButton {
   display: none;
 }
-#toggleSidebarCloseButton{
+#toggleSidebarCloseButton {
   display: none;
 }
-
 
 /* Media query específico para pantallas de hasta 1300px */
 @media (max-width: 1300px) {
@@ -486,18 +482,17 @@ h2:first-of-type {
     margin-left: -10px;
     background-color: transparent;
   }
-  
+
   #toggleSidebarButton img {
     width: 60px;
     height: 30px;
   }
   #toggleSidebarCloseButton {
-
     z-index: 1;
     border: none;
     background-color: transparent;
   }
-  
+
   #toggleSidebarCloseButton img {
     width: 25px;
     height: 25px;
@@ -508,12 +503,10 @@ h2:first-of-type {
     top: 0;
     left: -100%; /* Ancho inicial de la barra lateral cuando está oculta */
     width: 100%; /* Ancho de la barra lateral cuando está visible */
-    height:max-content;
+    height: max-content;
     z-index: 2; /* Coloca la barra lateral sobre el contenido */
     transition: left 0.3s ease;
   }
-
-  
 
   /* Estilo para ocultar el contenido cuando la barra lateral está visible */
   .sidebar-visible ul {
@@ -528,7 +521,7 @@ h2:first-of-type {
     left: 0;
   }
 
-  .sidebar ul li{
+  .sidebar ul li {
     height: 50px;
   }
 
@@ -597,13 +590,12 @@ h2:first-of-type {
 }
 
 @media (max-width: 768px) {
-
-  .body{
+  .body {
     height: auto;
   }
-.sidebar ul li{
-  height: fit-content;
-}
+  .sidebar ul li {
+    height: fit-content;
+  }
 
   .scrollMid {
     /* Asegura que la barra de desplazamiento solo se muestre cuando sea necesario */
@@ -616,17 +608,16 @@ h2:first-of-type {
   }
 
   .languages {
-    margin-right:20px;
+    margin-right: 20px;
     order: 4;
   }
 
   #logo-header {
-    content: url("../img/logo_ingenium_sin_nombre.png");
+    content: url('../img/logo_ingenium_sin_nombre.png');
     color: #f8c76c;
     width: 60px;
     height: 60px;
   }
-
 
   #problemsList {
     display: none;
@@ -636,21 +627,19 @@ h2:first-of-type {
     margin-left: -10px;
     background-color: transparent;
   }
-  
+
   #toggleSidebarButton img {
     width: 60px;
     height: 30px;
   }
   #toggleSidebarCloseButton {
-
     z-index: 1;
     border: none;
     background-color: transparent;
   }
-  
+
   #toggleSidebarCloseButton img {
     width: 25px;
     height: 25px;
   }
-   
 }
